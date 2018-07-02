@@ -1,0 +1,56 @@
+﻿<Window x:Class="Interfacegrafica.PesquisarEstoque"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Interfacegrafica"
+        mc:Ignorable="d"
+        Title="PesquisarEstoque" Height="450" Width="500">
+    <Grid Margin="0,-2,-0.4,2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="88*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.ColumnSpan="2" Margin="0,10,164.6,5.2">Nome:</Label>
+        <TextBox Grid.Column="1" Grid.Row="0" Margin="5.2,10,4.6,10.2" Text="{Binding Path=Busca}" ></TextBox>
+        <Button x:Name="ButtonPesquisa" Grid.Column="2" Grid.Row="0" Content="Pesquisar" Width="70" Margin="10" Click="ButtonPesquisa_Click"></Button>
+        <Button x:Name="CancelarButton" Grid.Row="2" Grid.Column="1" Content="Cancelar" Width="70" Margin="10" Click="CancelarButton_Click"></Button>
+        <DataGrid Grid.Row="1" Grid.ColumnSpan="3" 
+                  ItemsSource="{Binding Path=Sapatos}"
+                  SelectedItem="{Binding Path=SapatoSelecionado}"
+                  AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Nome" Binding="{Binding Nome}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Cadarço" Binding="{Binding Cadarco}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Material" Binding="{Binding Material}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Cor" Binding="{Binding Cor}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Preço" Binding="{Binding Preco}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Tamanho" Binding="{Binding Tamanho}" ></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!---<ListView Grid.Row="1" ItemsSource="{Binding Sapatos}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="50" Header="Id"  DisplayMemberBinding="{Binding Id}"  />
+                    <GridViewColumn Width="140" Header="Nome"  DisplayMemberBinding="{Binding Nome}" />
+                    <GridViewColumn Width="60" Header="Material"  DisplayMemberBinding="{Binding Material}" />
+                    <GridViewColumn Width="70" Header="Cor"  DisplayMemberBinding="{Binding Cor}" />
+                    <GridViewColumn Width="140" Header="Tem Cadarço"  DisplayMemberBinding="{Binding Cadarco}" />
+                    <GridViewColumn Width="140" Header="Quantidade"  DisplayMemberBinding="{Binding Quantidade}" />
+                    <GridViewColumn Width="140" Header="Tamanho"  DisplayMemberBinding="{Binding Tamanho}" />
+                    <GridViewColumn Width="140" Header="Preço"  DisplayMemberBinding="{Binding Preco}" />
+
+
+                </GridView>
+            </ListView.View>
+        </ListView>-->
+    </Grid>
+</Window>

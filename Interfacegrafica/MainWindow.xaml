@@ -1,0 +1,53 @@
+﻿<Window x:Class="Interfacegrafica.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Interfacegrafica"
+        mc:Ignorable="d"
+        Title="Nos Seus Pés" Height="450" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Menu>
+            <MenuItem Header="Gerenciamento Sapato">
+                <MenuItem x:Name="MenuGerenciarSapato" Header="Gerenciar Sapato" Click="MenuItem_Click"></MenuItem>
+                <MenuItem x:Name="MenuNovoSapato" Header="Novo Sapato" Click="MenuItem_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Gerenciamento Cliente">
+                <MenuItem Header="Gerenciar CLiente" >
+                    <MenuItem x:Name="MenuGerenciarPessoaFisica" Header="Pessoa Física" Click="MenuItem_Click"></MenuItem>
+                    <MenuItem x:Name="MenuGerenciarPessoaJuridica" Header="Pessoa Júridica" Click="MenuItem_Click"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Novo Cliente">
+                    <MenuItem x:Name="MenuNovoPessoaFisica" Header="Pessoa Física" Click="MenuItem_Click"></MenuItem>
+                    <MenuItem x:Name="MenuNovoPessoaJuridica" Header="Pessoa Júridica" Click="MenuItem_Click"></MenuItem>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Pesquisa">
+                <MenuItem x:Name="MenuGerenciarPesquisa" Header="Pesquisar Estoque" Click="MenuItem_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Vendas">
+                <MenuItem x:Name="MenuGerenciarVenda" Header="Gerenciar Venda" Click="MenuItem_Click"></MenuItem>
+                <MenuItem x:Name="MenuNovaVenda" Header="Nova Venda" Click="MenuItem_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Relatórios">
+                <MenuItem Header="Estoque"
+                          x:Name="Relatorio_Estoque"
+                          Click="MenuItem_Click"></MenuItem>
+              
+            </MenuItem>
+                <MenuItem Header="Sair" Click="MenuItem_Click_1"></MenuItem>
+            
+        </Menu>
+
+        <!--Usado para alterar o fundo baseado no que está digitado-->
+        <TextBox x:Name="TextBox1" Grid.Row="2" Background="{Binding RelativeSource={RelativeSource Self}, Path=Text}"></TextBox>
+        <TextBox x:Name="TextBox2" Grid.Row="1" Background="{Binding ElementName=TextBox1, Path=Text}"></TextBox>
+
+
+        <Image Grid.Row="1"   Source="Imagens/NosSeusPes.jpg" ></Image>
+    </Grid>
+</Window>

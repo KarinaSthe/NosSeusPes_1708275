@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "karinaSthefane Fernandes", "KarinaSthefaneFernandes\karinaSthefane Fernandes.csproj", "{B465BFDB-0C7E-4E39-A4AB-B8B1C3876D19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfacegrafica", "Interfacegrafica\Interfacegrafica.csproj", "{413E482D-1245-4375-A56E-0A251F04BC22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B465BFDB-0C7E-4E39-A4AB-B8B1C3876D19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B465BFDB-0C7E-4E39-A4AB-B8B1C3876D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B465BFDB-0C7E-4E39-A4AB-B8B1C3876D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B465BFDB-0C7E-4E39-A4AB-B8B1C3876D19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{413E482D-1245-4375-A56E-0A251F04BC22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{413E482D-1245-4375-A56E-0A251F04BC22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{413E482D-1245-4375-A56E-0A251F04BC22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{413E482D-1245-4375-A56E-0A251F04BC22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66AB37A2-21B0-464F-9772-D6671278D7B8}
+	EndGlobalSection
+EndGlobal

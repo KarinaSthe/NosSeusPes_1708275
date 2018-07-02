@@ -1,0 +1,70 @@
+﻿<Window x:Class="Interfacegrafica.GerenciamentodeVenda"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Interfacegrafica"
+        mc:Ignorable="d"
+        Title="GerenciamentodeVenda" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+ 
+
+            <RowDefinition Height="88*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0">Id:</Label>
+        <Label Grid.Row="1">Produto:</Label>
+        <Label Grid.Row="2">Numero:</Label>
+        <Label Grid.Row="3">Quantidade:</Label>
+        <Label Grid.Row="4">Valor Total:</Label>
+        <Label Grid.Row="5">Cliente:</Label>
+
+        <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding Path=VendaSelecionada.Id}"></TextBox>
+        <!--<TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=VendaSelecionada.Cliente}"></TextBox>
+        -->
+        <ComboBox Grid.Row="1" Grid.Column="1" 
+                  ItemsSource="{Binding Path=Sapatos}" SelectedItem="{Binding Path=VendaSelecionada.Sapatos}"
+                  DisplayMemberPath="Nome"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" 
+                  ItemsSource="{Binding Path=Sapatos}" SelectedItem="{Binding Path=VendaSelecionada.Tamanho}"
+                  DisplayMemberPath="Tamanho"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Path=VendaSelecionada.Quantidade}"></TextBox>
+        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Path=VendaSelecionada.ValorTotal}"></TextBox>
+
+        <ComboBox Grid.Row="5" Grid.Column="1" 
+                  ItemsSource="{Binding Path=PessoaFisicas}" SelectedItem="{Binding Path=VendaSelecionada.PessoaFisicas}"
+                  DisplayMemberPath="Nome"/>
+        <DataGrid x:Name="VendasDataGridView" Grid.Row="6" Grid.ColumnSpan="2" Margin="20,24,19.6,15.8" 
+                  Visibility="{Binding Path=VisibilidadeDataGrid}"
+                  ItemsSource="{Binding Path=Vendas}"  CanUserAddRows="False"                
+                  SelectedItem="{Binding Path=VendaSelecionada}" AutoGenerateColumns="False" 
+                  SelectionChanged="VendaDataGridView_SelectionChanged"
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"></DataGridTextColumn>
+                <!--<DataGridTextColumn Header="Produto" Binding="{Binding Produto}" ></DataGridTextColumn>-->
+                <DataGridTextColumn Header="Quantidade" Binding="{Binding Quantidade}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Valor Total" Binding="{Binding ValorTotal}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Cliente" Binding="{Binding PessoaFisicas.Nome}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Modelo Sapato" Binding="{Binding Sapatos.Nome}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Tamanho" Binding="{Binding Sapatos.Tamanho}" ></DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Row="8" Grid.Column="0" Width="100" Margin="20" HorizontalAlignment="Right"
+                x:Name="OkButton" Click="OkButton_Click">Ok</Button>
+        <Button Grid.Row="8" Grid.Column="1" Width="100" Margin="20" HorizontalAlignment="Left"
+                x:Name="CancelarButton" Click="CancelarButton_Click">Cancelar</Button>
+    </Grid>
+</Window>
